@@ -1,0 +1,7 @@
+time_location.settings:
+  path: '/admin/config/time_location'
+  defaults:
+    _form: '\Drupal\time_location\Form\TimeLocationForm'
+    _title: 'Time Location Form'
+  requirements:
+    _permission: 'administer content'

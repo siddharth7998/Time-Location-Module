@@ -1,0 +1,4 @@
+services:
+    time_location.time_service:
+        class: Drupal\time_location\Services\TimeService
+        arguments: ['@config.factory']

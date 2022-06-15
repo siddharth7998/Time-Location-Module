@@ -1,0 +1,28 @@
+<?php 
+
+/*
+* Hook Form Alter
+*/
+function time_location_form_time_location_settings_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $config = \Drupal::config('time_location.settings');
+  $time_zone = $config->get('time_zone');
+  $date = new DateTime("now", new DateTimeZone($time_zone) );
+  echo strftime($date->format('dS M Y - h:i A'));
+}
+
+function time_location_theme($existing, $type, $theme, $path) {
+  return [
+    'time-template' => [
+      'variables' => [
+       'data' => NULL,
+      ],
+    ],
+  ];
+}
+
+//Adding JS
+function time_location_preprocess_page(&$page) {
+  $page['#attached']['library'][] = 'time_location/global-scripts';
+}
+
+
