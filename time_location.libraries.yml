@@ -1,0 +1,6 @@
+time_update:
+  js:
+    js/time_update.js: {}
+  dependencies:
+    - core/jquery
+

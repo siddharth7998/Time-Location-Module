@@ -1,0 +1,5 @@
+time_location_config.time_location:
+  title: Time Location
+  description: Configure Time Location Details
+  parent: system.admin_config_system
+  route_name: time_location.settings
